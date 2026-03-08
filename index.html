@@ -7,9 +7,10 @@
     <meta property="og:description" content="잠재력을 터뜨리고 싶은 개발자 전희재의 포트폴리오입니다.">
     <meta property="og:image" content="https://heejae0105.github.io/portfolio-blog/portfolio.sumnail.png">
     <title>20825 전희재 | ACT(KE) 지원</title>
+    
     <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
-
+    
     <style>
         :root {
             --bg-color: #fdfdfd;
@@ -18,77 +19,37 @@
             --accent: #0056b3;
             --highlight: #e3f2fd;
             --code-bg: #f4f4f4;
-            --border: #e0e0e0;          
+            --border: #e0e0e0;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-
-        html {
-            /* 목차 클릭 시 부드럽게 스크롤되도록 설정 */
-            scroll-behavior: smooth;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
         body {
             background-color: var(--bg-color);
-            /* 은은한 도트 무늬 배경 추가 (개발자 감성) */
-            background-image: radial-gradient(#d5d5d5 1px, transparent 1px);
-            background-size: 24px 24px;
-            
             color: var(--text-main);
             font-family: 'Pretendard', sans-serif;
             line-height: 1.75;
             font-size: 17px;
         }
 
-        a { text-decoration: none; color: inherit; transition: 0.2s; }
-        a:hover { color: var(--accent); }
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: 0.2s;
+        }
 
-        /* 중앙 컨텐츠 영역 설정 */
+        a:hover {
+            color: var(--accent);
+        }
+
         .wrapper {
             max-width: 760px;
             margin: 0 auto;
-            padding: 70px 40px;
-            /* 도트 배경 위에서 컨텐츠가 돋보이도록 반투명 흰색 배경과 은은한 그림자 추가 */
-            background-color: rgba(255, 255, 255, 0.95);
-            box-shadow: 0 0 50px rgba(0,0,0,0.03);
-            min-height: 100vh;
-        }
-
-        /* --- 사이드바 (플로팅 목차) --- */
-        .sidebar {
-            position: fixed;
-            top: 150px;
-            /* 메인 컨텐츠(.wrapper)의 왼쪽 여백 중앙쯤에 위치하도록 계산 */
-            left: calc(50% - 380px - 150px);
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-        }
-        
-        .sidebar a {
-            font-family: 'Fira Code', 'Pretendard', sans-serif;
-            font-size: 0.95rem;
-            color: #888;
-            font-weight: 600;
-            padding-left: 12px;
-            border-left: 2px solid transparent;
-            transition: all 0.2s ease;
-        }
-
-        .sidebar a:hover {
-            color: var(--accent);
-            border-left: 2px solid var(--accent);
-            transform: translateX(3px);
-        }
-
-        /* 화면이 작아지면 사이드바 숨김 처리 */
-        @media (max-width: 1200px) {
-            .sidebar {
-                display: none;
-            }
-            .wrapper {
-                box-shadow: none;
-            }
+            padding: 70px 24px;
         }
 
         /* --- 헤더 --- */
@@ -100,381 +61,530 @@
             justify-content: space-between;
             align-items: flex-end;
         }
-        
-        .logo { font-weight: 900; font-size: 1.6rem; letter-spacing: -1px; }
+
+        .logo {
+            font-weight: 900;
+            font-size: 1.6rem;
+            letter-spacing: -1px;
+        }
+
         .contact-info {
-            text-align: right; font-size: 0.95rem; font-family: 'Fira Code', monospace;
-            color: var(--text-sub); line-height: 1.5;
+            text-align: right;
+            font-size: 0.95rem;
+            font-family: 'Fira Code', monospace;
+            color: var(--text-sub);
+            line-height: 1.5;
         }
 
         /* --- Intro --- */
-        .intro { margin-bottom: 90px; }
+        .intro {
+            margin-bottom: 90px;
+        }
+
         .intro h1 {
-            font-size: 2.6rem; font-weight: 800; line-height: 1.3;
-            margin-bottom: 40px; word-break: keep-all; letter-spacing: -0.03em; color: #111;
+            font-size: 2.6rem;
+            font-weight: 800;
+            line-height: 1.3;
+            margin-bottom: 40px;
+            word-break: keep-all;
+            letter-spacing: -0.03em;
+            color: #111;
         }
+
         .intro h1 .club-name {
-            color: var(--accent); display: inline-block;
-            border-bottom: 4px solid var(--accent); line-height: 1.0;
+            color: var(--accent);
+            display: inline-block;
+            border-bottom: 4px solid var(--accent);
+            line-height: 1.0;
         }
+
         .intro p {
-            font-size: 1.15rem; color: var(--text-sub); margin-bottom: 24px;
-            word-break: keep-all; text-align: justify;
+            font-size: 1.15rem;
+            color: var(--text-sub);
+            margin-bottom: 24px;
+            word-break: keep-all;
+            text-align: justify;
         }
+
         .highlight {
             background: linear-gradient(to top, var(--highlight) 50%, transparent 50%);
-            font-weight: 700; color: #000; padding: 0 4px;
+            font-weight: 700;
+            color: #000;
+            padding: 0 4px;
         }
 
         /* --- Section Common --- */
         .section-label {
-            font-family: 'Fira Code', monospace; font-weight: 700; color: var(--accent);
-            margin-bottom: 40px; display: block; border-left: 5px solid var(--accent);
-            padding-left: 15px; font-size: 1.2rem; margin-top: 100px;
-            scroll-margin-top: 50px; /* 목차 클릭 이동 시 위쪽 여백 확보 */
+            font-family: 'Fira Code', monospace;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 40px;
+            display: block;
+            border-left: 5px solid var(--accent);
+            padding-left: 15px;
+            font-size: 1.2rem;
+            margin-top: 100px;
         }
 
         /* --- Growth Log --- */
         .skill-box {
-            background: #fff; border: 1px solid var(--border); border-radius: 16px;
-            padding: 30px; margin-bottom: 40px;
-        }
-        
-        .skill-title {
-            font-size: 1.3rem; font-weight: 700; margin-bottom: 20px;
-            display: flex; align-items: center; gap: 10px;
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 40px;
         }
 
-        .skill-tags { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 30px; }
-        .skill-badge {
-            background: #222; color: #fff; padding: 8px 16px; border-radius: 8px;
-            font-family: 'Fira Code', monospace; font-weight: 600; font-size: 0.95rem;
+        .skill-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
-        .skill-badge.py { background: #3776AB; } 
-        .skill-badge.js { background: #F7DF1E; color: #000; } 
-        .skill-badge.html { background: #E34F26; } 
-        .skill-badge.css { background: #1572B6; } 
+
+        .skill-tags {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        .skill-badge {
+            background: #222;
+            color: #fff;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-family: 'Fira Code', monospace;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .skill-badge.py { background: #3776AB; }
+        .skill-badge.js { background: #F7DF1E; color: #000; }
+        .skill-badge.html { background: #E34F26; }
+        .skill-badge.css { background: #1572B6; }
 
         .evidence-img {
-            width: 100%; border-radius: 8px; border: 1px solid #eee;
-            margin-bottom: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            width: 100%;
+            border-radius: 8px;
+            border: 1px solid #eee;
+            margin-bottom: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
         }
+
         .caption {
-            font-size: 0.9rem; color: #666; margin-bottom: 30px;
-            text-align: center; font-style: italic;
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 30px;
+            text-align: center;
+            font-style: italic;
         }
 
         .grid-gallery {
-            display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
         }
+
         .grid-gallery img {
-            width: 100%; height: auto; border-radius: 6px; border: 1px solid #eee;
+            width: 100%;
+            height: auto;
+            border-radius: 6px;
+            border: 1px solid #eee;
         }
 
         /* --- Projects --- */
         .project-item {
-            margin-bottom: 60px; border: 1px solid var(--border); border-radius: 16px;
-            padding: 35px; background: #fff; transition: transform 0.2s, box-shadow 0.2s;
+            margin-bottom: 60px;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 35px;
+            background: #fff;
+            transition: transform 0.2s, box-shadow 0.2s;
         }
-        .project-item:hover { transform: translateY(-5px); box-shadow: 0 12px 40px rgba(0,0,0,0.08); }
+
+        .project-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+        }
+
         .project-header {
-            display: flex; justify-content: space-between; align-items: flex-start;
-            margin-bottom: 20px; flex-wrap: wrap; gap: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            gap: 10px;
         }
-        .project-title { font-size: 1.7rem; font-weight: 800; letter-spacing: -0.5px; }
-        .tags { display: flex; gap: 8px; font-family: 'Fira Code', monospace; font-size: 0.9rem; }
-        .tag { background: var(--code-bg); padding: 6px 10px; border-radius: 6px; color: var(--text-sub); font-weight: 600; }
-        .project-summary { font-size: 1.1rem; color: var(--text-sub); margin-bottom: 24px; font-weight: 500; }
+
+        .project-title {
+            font-size: 1.7rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        .tags {
+            display: flex;
+            gap: 8px;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.9rem;
+        }
+
+        .tag {
+            background: var(--code-bg);
+            padding: 6px 10px;
+            border-radius: 6px;
+            color: var(--text-sub);
+            font-weight: 600;
+        }
+
+        .project-summary {
+            font-size: 1.1rem;
+            color: var(--text-sub);
+            margin-bottom: 24px;
+            font-weight: 500;
+        }
 
         /* Details */
-        details { background: #fafafa; border-radius: 10px; padding: 20px; cursor: pointer; }
-        summary { font-weight: 700; color: var(--accent); display: flex; align-items: center; gap: 10px; font-size: 1.05rem; }
-        summary::after { content: "▼"; font-size: 0.8rem; transition: transform 0.3s; }
-        details[open] summary::after { transform: rotate(180deg); }
-        details[open] summary { margin-bottom: 20px; border-bottom: 1px solid #ddd; padding-bottom: 15px; }
-        .detail-content h3 { font-size: 1.15rem; margin: 30px 0 12px 0; color: #111; border-left: 4px solid var(--accent); padding-left: 12px; font-weight: 700; }
-        .detail-content h3:first-child { margin-top: 10px; }
-        .detail-content p { margin-bottom: 12px; color: #444; font-size: 1rem; line-height: 1.7; }
-        .detail-content ul { padding-left: 22px; margin-bottom: 20px; color: #444; }
-        .detail-content li { margin-bottom: 8px; }
+        details {
+            background: #fafafa;
+            border-radius: 10px;
+            padding: 20px;
+            cursor: pointer;
+        }
 
-        footer { margin-top: 120px; border-top: 1px solid var(--border); padding-top: 40px; text-align: center; color: #999; font-size: 0.95rem; }
-        footer p strong { color: var(--text-main); }
+        summary {
+            font-weight: 700;
+            color: var(--accent);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.05rem;
+        }
+
+        summary::after {
+            content: "▼";
+            font-size: 0.8rem;
+            transition: transform 0.3s;
+        }
+
+        details[open] summary::after {
+            transform: rotate(180deg);
+        }
+
+        details[open] summary {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 15px;
+        }
+
+        .detail-content h3 {
+            font-size: 1.15rem;
+            margin: 30px 0 12px 0;
+            color: #111;
+            border-left: 4px solid var(--accent);
+            padding-left: 12px;
+            font-weight: 700;
+        }
+
+        .detail-content h3:first-child {
+            margin-top: 10px;
+        }
+
+        .detail-content p {
+            margin-bottom: 12px;
+            color: #444;
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        .detail-content ul {
+            padding-left: 22px;
+            margin-bottom: 20px;
+            color: #444;
+        }
+
+        .detail-content li {
+            margin-bottom: 8px;
+        }
+
+        footer {
+            margin-top: 120px;
+            border-top: 1px solid var(--border);
+            padding-top: 40px;
+            text-align: center;
+            color: #999;
+            font-size: 0.95rem;
+        }
+
+        footer p strong {
+            color: var(--text-main);
+        }
 
         @media (max-width: 600px) {
             .intro h1 { font-size: 2.1rem; }
             .wrapper { padding: 40px 20px; }
-            .grid-gallery { grid-template-columns: 1fr; } 
+            .grid-gallery { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
-<aside class="sidebar">
-    <a href="#section-intro">> Intro</a>
-    <a href="#section-skills">> 언어 공부 기록</a>
-    <a href="#section-projects">> 프로젝트 (Passion)</a>
-</aside>
-
-<div class="wrapper">
-    
-    <header>
-        <div class="logo">JEONHEEJAE</div>
-        <div class="contact-info">
-            20825 전희재<br>
-            010-2693-2953<br>
-            <a href="mailto:25_jhj0105@dshs.kr">25_jhj0105@dshs.kr</a>
-        </div>
-    </header>
-
-    <section id="section-intro" class="intro">
-        <h1>
-            <span class="club-name">ACT(KE)</span>와 꼭 함께<br>
-            성장해나가고 싶은<br>
-            개발자 전희재입니다.
-        </h1>
-        <p>
-            안녕하세요, <strong>소프트웨어에 진심인 학생 전희재</strong>입니다.<br>
-            저는 소프트웨어라는 분야에 푹 빠져 지난 10개월 간 성장하고 있는 학생입니다.
-        </p>
-        <p>
-            처음에는 코딩을 즐기며 몰입하는 친구들의 모습이 그저 멋있어 보였습니다. 
-            '나도 저들처럼 무언가에 빠져보고 싶다'는 생각으로 시작했습니다.
-        </p>
-        <p>
-            하지만 지금 저를 책상 앞에 앉게 만드는 건 단순한 동경이 아닙니다.<br>
-            코드 에러를 AI의 도움 없이 <span class="highlight">스스로 해결하는 순간 터지는 도파민.</span><br>
-            그 강렬한 성취감이 저를 계속해서 움직이게 합니다.
-        </p>
-        <p>
-            저는 지금 학원을 다니며 기초를 탄탄히 다지고 있습니다.<br>
-            이제 혼자만의 공부를 넘어, 저의 <strong>'불같은 성장'</strong>에 <strong>'기름 같은 역할'</strong>이 되어줄 수 있는 동아리, <span class="highlight">ACT(KE)</span>와 함께하고 싶어 지원하게 되었습니다.
-        </p>
-    </section>
-
-    <section id="section-skills">
-        <span class="section-label">> 언어 공부 기록 </span>
-
-        <div class="skill-box">
-            <div class="skill-title"> 사용 언어 </div>
-            <p style="margin-bottom: 15px; color: #555;">
-                단순히 문법만 외우는 것이 아니라, <strong>웹의 구조(HTML/CSS)</strong>와 <strong>프로그래밍 로직(Python/JS)</strong>을 동시에 익히며 개발의 전체적인 흐름을 잡아가고 있습니다.
-            </p>
-            <div class="skill-tags">
-                <span class="skill-badge py">Python</span>
-                <span class="skill-badge js">JavaScript</span>
-                <span class="skill-badge html">HTML</span>
-                <span class="skill-badge css">CSS</span>
+    <div class="wrapper">
+        <header>
+            <div class="logo">JEONHEEJAE</div>
+            <div class="contact-info">
+                20825 전희재<br>
+                010-2693-2953<br>
+                <a href="mailto:25_jhj0105@dshs.kr">25_jhj0105@dshs.kr</a>
             </div>
+        </header>
+
+        <section class="intro">
+            <h1>
+                <span class="club-name">ACT(KE)</span>와 꼭 함께<br>
+                성장해나가고 싶은<br>
+                개발자 전희재입니다.
+            </h1>
+            <p>
+                안녕하세요, <strong>소프트웨어에 진심인 학생 전희재</strong>입니다.<br>
+                저는 소프트웨어라는 분야에 푹 빠져 지난 10개월 간 성장하고 있는 학생입니다.
+            </p>
+            <p>
+                처음에는 코딩을 즐기며 몰입하는 친구들의 모습이 그저 멋있어 보였습니다. 
+                '나도 저들처럼 무언가에 빠져보고 싶다'는 생각으로 시작했습니다.
+            </p>
+            <p>
+                하지만 지금 저를 책상 앞에 앉게 만드는 건 단순한 동경이 아닙니다.<br>
+                코드 에러를 AI의 도움 없이 <span class="highlight">스스로 해결하는 순간 터지는 도파민.</span><br>
+                그 강렬한 성취감이 저를 계속해서 움직이게 합니다.
+            </p>
+            <p>
+                저는 지금 학원을 다니며 기초를 탄탄히 다지고 있습니다.<br>
+                이제 혼자만의 공부를 넘어, 저의 <strong>'불같은 성장'</strong>에 <strong>'기름 같은 역할'</strong>이 되어줄 수 있는 동아리, <span class="highlight">ACT(KE)</span>와 함께하고 싶어 지원하게 되었습니다.
+            </p>
+        </section>
+
+        <section>
+            <span class="section-label">> 언어 공부 기록 </span>
             
-            <img src="study.png" alt="수강 중인 코스 목록" class="evidence-img">
-            <div class="caption">▲ 현재 진행 중인 학습 로드맵: 기초부터 실습까지 빈틈없이 채워가고 있습니다.</div>
-        </div>
-
-        <div class="skill-box">
-            <div class="skill-title"> 파이썬 복습 </div>
-            <p style="margin-bottom: 20px; color: #555;">
-                코딩 실력은 눈으로 보는 게 아니라 손으로 익히는 것이라 생각합니다.<br>
-                <strong>'위키독스 파이썬 300제'</strong>를 통해 문제를 풀며 문제 해결 근육을 키웠습니다. 처음에 어려웠던 개념들을 다시 복습하고 문제를 풀며 완벽하게 이해하기 위해 노력했습니다.
-            </p>
-
-            <div class="grid-gallery">
-                <img src="py1.png" alt="파이썬 문제풀이 기록 1">
-                <img src="py2.png" alt="파이썬 문제풀이 기록 2">
-                <img src="py3.png" alt="파이썬 문제풀이 기록 3">
-                <img src="py4.png" alt="파이썬 문제풀이 기록 4">
+            <div class="skill-box">
+                <div class="skill-title"> 사용 언어 </div>
+                <p style="margin-bottom: 15px; color: #555;">
+                    단순히 문법만 외우는 것이 아니라, <strong>웹의 구조(HTML/CSS)</strong>와 <strong>프로그래밍 로직(Python/JS)</strong>을 동시에 익히며 개발의 전체적인 흐름을 잡아가고 있습니다.
+                </p>
+                <div class="skill-tags">
+                    <span class="skill-badge py">Python</span>
+                    <span class="skill-badge js">JavaScript</span>
+                    <span class="skill-badge html">HTML</span>
+                    <span class="skill-badge css">CSS</span>
+                </div>
+                <img src="study.png" alt="수강 중인 코스 목록" class="evidence-img">
+                <div class="caption">▲ 현재 진행 중인 학습 로드맵: 기초부터 실습까지 빈틈없이 채워가고 있습니다.</div>
             </div>
-            <div class="caption" style="margin-top: 10px;">▲ AI 도움 없이 스스로 고민하며 해결해 낸 문제 해결의 기록들</div>
-        </div>
-    </section>
 
-    <section id="section-projects">
-        <span class="section-label">> console.log(My_Passion)</span>
-
-        <article class="project-item">
-            <div class="project-header">
-                <div class="project-title">01. IoT 다인 탑승 감지 시스템</div>
-                <div class="tags">
-                    <span class="tag">Arduino</span>
-        
-                    <span class="tag">Sensor Fusion</span>
+            <div class="skill-box">
+                <div class="skill-title"> 파이썬 복습 </div>
+                <p style="margin-bottom: 20px; color: #555;">
+                    코딩 실력은 눈으로 보는 게 아니라 손으로 익히는 것이라 생각합니다.<br>
+                    <strong>'위키독스 파이썬 300제'</strong>를 통해 문제를 풀며 문제 해결 근육을 키웠습니다. 처음에 어려웠던 개념들을 다시 복습하고 문제를 풀며 완벽하게 이해하기 위해 노력했습니다.
+                </p>
+                <div class="grid-gallery">
+                    <img src="py1.png" alt="파이썬 문제풀이 기록 1">
+                    <img src="py2.png" alt="파이썬 문제풀이 기록 2">
+                    <img src="py3.png" alt="파이썬 문제풀이 기록 3">
+                    <img src="py4.png" alt="파이썬 문제풀이 기록 4">
                 </div>
+                <div class="caption" style="margin-top: 10px;">▲ AI 도움 없이 스스로 고민하며 해결해 낸 문제 해결의 기록들</div>
             </div>
-            <p class="project-summary">
-                전동 킥보드 2인 탑승이라는 사회적 안전 문제를 해결하기 위해, 다중 센서 융합 기술을 활용하여 실시간으로 위반 상황을 감지하고 경고하는 하드웨어 솔루션입니다.
-            </p>
-            <details>
-                <summary>개발 과정 및 상세 내용 보기 (Click)</summary>
-                <div class="detail-content">
-                    <h3>1. 활동 목적 및 배경</h3>
-                    <p>전동 킥보드 2인 탑승은 국내에서 명백한 도로교통법 위반임에도 불구하고 일상에서 빈번하게 발생하는 안전 문제입니다. 단순한 법적 규제만으로는 실질적인 억제 효과를 기대하기 어렵다는 문제의식에서 출발하여, 킥보드 자체에서 2인 탑승을 감지하고 경고를 발생시키는 기술적 안전장치를 직접 설계·구현하였습니다.</p>
+        </section>
 
-                    <h3>2. 핵심 기술 구현</h3>
-                    <p>아두이노 보드를 중심으로 두 가지 센서를 복합 활용한 이중 감지 시스템을 설계했습니다.</p>
-                    <ul>
-                        <li><strong>FSR 압력 센서:</strong> 발판에 4개 배치, 3개 이상 동시 감지 시 조건 1 충족</li>
-                        <li><strong>초음파 센서:</strong> 앞뒤 각 2개 배치, 탑승자 간 거리 합이 설정값 이하일 때 조건 2 충족</li>
-                        <li><strong>경고 발생 로직:</strong> 두 조건이 동시에 충족되는 상황이 3회 이상 반복될 때만 부저 작동 → 일시적 오접촉을 필터링하고 실제 2인 탑승 상황에서만 경고 발생</li>
-                    </ul>
-
-                    <h3>3. 성과</h3>
-                    <p>센서 융합 기반의 조건 제어 로직을 직접 설계하고 구현하면서, 단일 센서의 오류 가능성을 보완하는 이중 검증 구조의 중요성을 체감했습니다. 나아가 교통 안전이라는 실질적인 사회 문제를 하드웨어와 소프트웨어의 결합으로 해결하는 과정을 경험하며, 기술이 사회에 기여할 수 있는 방향성에 대해 깊이 고민하는 계기가 되었습니다.</p>
-                    
-                    <div class="grid-gallery" style="margin-top: 20px;">
-                        <img src="item1.png" alt="다인 탑승 프로젝트 자료 1">
-                        <img src="item2.png" alt="다인 탑승 프로젝트 자료 2">
-                    </div>
-                    <div class="caption" style="margin-top: 10px;">▲ 하드웨어 설계 및 센서 배치 구상도</div>
-                </div>
-            </details>
-        </article>
-
-        <article class="project-item">
-            <div class="project-header">
-                <div class="project-title">02. 익명 오픈채팅 — 탈중앙화 P2P 블록체인 메신저</div>
-                <div class="tags">
-                    <span class="tag">Python</span>
-                    <span class="tag">Socket</span>
-                    <span class="tag">Blockchain</span>
-                </div>
-            </div>
-            <p class="project-summary">
-                카카오톡 먹통 사례를 보고 중앙 서버에 대한 의존 없이 개인 간 직접 통신과 데이터 무결성을 동시에 보장하는 익명 오픈채팅 플랫폼 개발을 계획했습니다. Python Socket 기반의 P2P 네트워크 위에 블록체인 구조를 결합하여, 제3자의 개입 없이도 신뢰 가능한 통신 환경을 구현하였습니다.
-            </p>
-            <details>
-                <summary>개발 과정 및 상세 내용 보기 (Click)</summary>
-                <div class="detail-content">
-                    <h3>1. 핵심 구현 사항</h3>
-                    <p><strong>① 탈중앙화 P2P 네트워크</strong><br>
-                    Python의 socket 라이브러리를 활용하여 각 클라이언트가 동시에 서버 역할을 수행하는 하이브리드 노드 구조를 설계하였습니다. 특정 노드가 연결을 종료하거나 장애가 발생하더라도 나머지 피어 간 통신이 중단 없이 유지되어 단일 장애점(SPOF) 문제를 구조적으로 해소하였습니다. 또한 중앙 데이터센터에 대한 의존도를 제거함으로써 로컬 환경에서도 독립적으로 운용 가능한 유연한 통신 인프라를 구축하였습니다.</p>
-
-                    <p><strong>② 블록체인 기반 메시지 무결성 보장</strong><br>
-                    모든 대화 메시지는 단순 텍스트가 아닌, 인덱스·타임스탬프·데이터·이전 블록의 해시값으로 구성된 Block 객체로 생성됩니다. SHA-256 해시 함수를 통해 각 블록을 이전 블록과 수학적으로 연결함으로써 불변의 체인 구조를 형성합니다. 과거 메시지를 1바이트라도 수정할 경우 해당 블록의 해시값이 즉각 변경되어 이후 체인 전체가 무효화되므로, 중앙 서버의 보증 없이도 데이터 위·변조를 감지할 수 있습니다.</p>
-
-                    <h3>2. 기술적 의의</h3>
-                    <p>본 프로젝트는 가용성·비용 효율·정보 주권이라는 세 가지 과제를 단일 아키텍처로 해결하는 데 초점을 맞췄습니다. P2P 구조로 인프라 비용과 중앙화 리스크를 제거하고, 블록체인 알고리즘으로 신뢰 기관 없는 무결성 검증을 실현하여 완전한 탈중앙화 메신저 환경을 구현하였습니다.</p>
-                    
-                    <div class="grid-gallery" style="margin-top: 20px;">
-                        <img src="chain1.png" alt="블록체인 메신저 프로젝트 자료 1">
-                        <img src="chain2.png" alt="chain2.png">
-                    </div>
-                    <div class="caption" style="margin-top: 10px;">▲ P2P 네트워크 통신 및 블록체인 기반 무결성 검증 구현 화면</div>
-                </div>
-            </details>
-        </article>
-
-        <article class="project-item">
-            <div class="project-header">
-                <div class="project-title">03. DealChecker: AI 기반 계약서 분석 웹 (ACT 해커톤)</div>
-                <div class="tags">
-                    <span class="tag">AI / NLP</span>
-                    <span class="tag">Fine-Tuning</span>
-                    <span class="tag">Flask</span>
-                </div>
-            </div>
-            <p class="project-summary">
-                청년들의 근로계약서 피해 예방을 위해, 사용자가 쉽게 불공정 조항을 인식하고 점검할 수 있도록 AI를 파인튜닝하여 시각화해 주는 법률 지원 웹 서비스입니다.
-            </p>
-            <details>
-                <summary>개발 과정 및 상세 내용 보기 (Click)</summary>
-                <div class="detail-content">
-                    <h3>1. 개발 동기 및 목적</h3>
-                    <p><strong>진행 개요:</strong> ACT 해커톤 출품작 (2025.07.31 ~ 08.02, 대전대신고등학교)</p>
-                    <p>대전 지역 청년들이 근로계약서 미작성이나 불공정 조항으로 겪는 피해를 예방하기 위해 기획했습니다. 정보 불균형과 법률 서비스 접근성 문제를 해결하고자, 누구나 활용 가능한 사회 문제 해결형 웹사이트를 개발하여 지역 사회 청소년이 참여하는 IT 공헌 모델을 제시하고자 했습니다.</p>
-                    
-                    <h3>2. 적용 기술 및 이론적 배경</h3>
-                    <ul>
-                        <li><strong>자연어 처리 (NLP):</strong> 사용자가 업로드한 계약서 문장을 단어 단위로 분리하고 의미를 파악하여, 불공정 조항 여부를 자동으로 탐지하고 분류하는 데 활용했습니다.</li>
-                        <li><strong>AI 파인튜닝 (Fine-Tuning):</strong> 사전 학습된 범용 인공지능 모델에 실제 근로계약서 사례와 불공정 조항 데이터셋을 추가로 학습시켜, 법률 문서라는 특정 도메인에 최적화된 높은 정확도의 분석 결과를 도출했습니다.</li>
-                    </ul>
-
-                    <h3>3. 개발 과정</h3>
-                    <ul>
-                        <li><strong>데이터 전처리:</strong> 실제 계약서 사례를 조사하여 불공정 조항의 패턴 문장을 발췌하고, 모델 학습에 적합한 형태로 데이터셋을 가공했습니다.</li>
-                        <li><strong>모델 학습 및 검증:</strong> 파인튜닝을 통해 정확도와 재현율을 평가·개선하고, 가상의 계약서 입력 및 법률 사료 비교를 통해 신뢰도를 검증했습니다.</li>
-                        <li><strong>웹사이트 구현:</strong> Python(Flask) 기반 백엔드와 HTML/CSS를 활용해, 사용자가 계약서를 업로드하면 자동으로 분석 결과를 시각화해 주는 인터페이스를 구축했습니다.</li>
-                    </ul>
-
-                    <h3>4. 주요 성과 및 결과물</h3>
-                    <p>법률 지식이 부족한 사용자도 스스로 계약 내용을 점검할 수 있는 직관적인 플랫폼을 완성했습니다. 특히 플랫폼 내에 <strong>전용 관리 페이지</strong>를 개발하여, 사용자가 과거에 업로드한 계약서와 분석 결과를 누적하여 저장, 비교, 검토할 수 있는 체계적인 이력 관리 기능을 구현했습니다.</p>
-                    
-                    <div class="grid-gallery" style="margin-top: 20px;">
-                        <img src="law1.png" alt="AI 계약서 분석 웹 화면 1">
-                        <img src="law2.png" alt="AI 계약서 분석 웹 화면 2">
-                    </div>
-                    <div class="caption" style="margin-top: 10px;">▲ 계약서 자동 분석 및 이력 관리 인터페이스</div>
-
-                    <h3>5. 결론 및 향후 계획</h3>
-                    <p>본 프로젝트를 통해 단순 정보 제공을 넘어 실제 사회 문제 해결에 기여할 수 있다는 생각을 가지게 되었습니다. 향후 더 많은 계약서 데이터를 수집해 분석 정확도를 높이고, 모바일 앱 형태로 확장하여 접근성을 강화할 수 있으면 좋을것 같고, 법률 기관과의 연계를 통해 공신력을 확보한다면 더욱 실질적인 피해 예방 솔루션이 될 것이라 생각합니다.</p>
-                </div>
-            </details>
-        </article>
-
-        <article class="project-item">
-            <div class="project-header">
-                <div class="project-title">04. 수학 개념 시각화 도구</div>
-                <div class="tags">
-                    <span class="tag">Python</span>
-                    <span class="tag">Matplotlib</span>
-                    <span class="tag">Visualization</span>
-                </div>
-            </div>
-            <p class="project-summary">
-                추상적인 수학 함수식을 즉시 시각화하여 개념의 원리를 직관적으로 이해할 수 있도록 돕는 학습 도구입니다.
-            </p>
-            <details>
-                <summary>개발 과정 및 상세 내용 보기 (Click)</summary>
-                <div class="detail-content">
-                    <h3>1. 제작 배경 및 기능</h3>
-                    <p>교과서 속 텍스트로만 보던 '거듭제곱근'의 성질을 눈으로 확인하기 위해 <code>matplotlib</code> 라이브러리를 활용해 제작했습니다.</p>
-                    <div class="grid-gallery" style="margin-top: 20px;">
-                        <img src="graph1.png" alt="그래프 시각화 1">
-                        <img src="graph2.png" alt="그래프 시각화 2">
+        <section>
+            <span class="section-label">> console.log(My_Passion)</span>
+            
+            <article class="project-item">
+                <div class="project-header">
+                    <div class="project-title">01. IoT 다인 탑승 감지 시스템</div>
+                    <div class="tags">
+                        <span class="tag">Arduino</span>
+                        <span class="tag">Sensor Fusion</span>
                     </div>
                 </div>
-            </details>
-        </article>
+                <p class="project-summary">
+                    전동 킥보드 2인 탑승이라는 사회적 안전 문제를 해결하기 위해, 다중 센서 융합 기술을 활용하여 실시간으로 위반 상황을 감지하고 경고하는 하드웨어 솔루션입니다.
+                </p>
+                <details>
+                    <summary>개발 과정 및 상세 내용 보기 (Click)</summary>
+                    <div class="detail-content">
+                        <h3>1. 활동 목적 및 배경</h3>
+                        <p>전동 킥보드 2인 탑승은 국내에서 명백한 도로교통법 위반임에도 불구하고 일상에서 빈번하게 발생하는 안전 문제입니다. 단순한 법적 규제만으로는 실질적인 억제 효과를 기대하기 어렵다는 문제의식에서 출발하여, 킥보드 자체에서 2인 탑승을 감지하고 경고를 발생시키는 기술적 안전장치를 직접 설계·구현하였습니다.</p>
+                        
+                        <h3>2. 핵심 기술 구현</h3>
+                        <p>아두이노 보드를 중심으로 두 가지 센서를 복합 활용한 이중 감지 시스템을 설계했습니다.</p>
+                        <ul>
+                            <li><strong>FSR 압력 센서:</strong> 발판에 4개 배치, 3개 이상 동시 감지 시 조건 1 충족</li>
+                            <li><strong>초음파 센서:</strong> 앞뒤 각 2개 배치, 탑승자 간 거리 합이 설정값 이하일 때 조건 2 충족</li>
+                            <li><strong>경고 발생 로직:</strong> 두 조건이 동시에 충족되는 상황이 3회 이상 반복될 때만 부저 작동 → 일시적 오접촉을 필터링하고 실제 2인 탑승 상황에서만 경고 발생</li>
+                        </ul>
+                        
+                        <h3>3. 성과</h3>
+                        <p>센서 융합 기반의 조건 제어 로직을 직접 설계하고 구현하면서, 단일 센서의 오류 가능성을 보완하는 이중 검증 구조의 중요성을 체감했습니다. 나아가 교통 안전이라는 실질적인 사회 문제를 하드웨어와 소프트웨어의 결합으로 해결하는 과정을 경험하며, 기술이 사회에 기여할 수 있는 방향성에 대해 깊이 고민하는 계기가 되었습니다.</p>
+                        
+                        <div class="grid-gallery" style="margin-top: 20px;">
+                            <img src="item1.png" alt="다인 탑승 프로젝트 자료 1">
+                            <img src="item2.png" alt="다인 탑승 프로젝트 자료 2">
+                        </div>
+                        <div class="caption" style="margin-top: 10px;">▲ 하드웨어 설계 및 센서 배치 구상도</div>
+                    </div>
+                </details>
+            </article>
 
-        <article class="project-item">
-            <div class="project-header">
-                <div class="project-title">05. 날씨 브리핑봇</div>
-                <div class="tags">
-                    <span class="tag">Python</span>
-                    <span class="tag">Web Scraping</span>
-                    <span class="tag">BeautifulSoup</span>
+            <article class="project-item">
+                <div class="project-header">
+                    <div class="project-title">02. 익명 오픈채팅 — 탈중앙화 P2P 블록체인 메신저</div>
+                    <div class="tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Socket</span>
+                        <span class="tag">Blockchain</span>
+                    </div>
                 </div>
-            </div>
-            <p class="project-summary">
-                실시간 날씨 정보를 크롤링하여 정제된 메시지로 전달해주는 일상 프로그램입니다.
-            </p>
-            <details>
-                <summary>개발 과정 및 상세 내용 보기 (Click)</summary>
-                <div class="detail-content">
-                    <h3>1. 기획 의도</h3>
-                    <p> 나의 일상생활에 도움이 될 수 있는 프로그램을 만들어보자 하는 취지에서 기획하게 되었습니다.</p>
+                <p class="project-summary">
+                    카카오톡 먹통 사례를 보고 중앙 서버에 대한 의존 없이 개인 간 직접 통신과 데이터 무결성을 동시에 보장하는 익명 오픈채팅 플랫폼 개발을 계획했습니다. Python Socket 기반의 P2P 네트워크 위에 블록체인 구조를 결합하여, 제3자의 개입 없이도 신뢰 가능한 통신 환경을 구현하였습니다.
+                </p>
+                <details>
+                    <summary>개발 과정 및 상세 내용 보기 (Click)</summary>
+                    <div class="detail-content">
+                        <h3>1. 핵심 구현 사항</h3>
+                        <p><strong>① 탈중앙화 P2P 네트워크</strong><br>
+                        Python의 socket 라이브러리를 활용하여 각 클라이언트가 동시에 서버 역할을 수행하는 하이브리드 노드 구조를 설계하였습니다. 특정 노드가 연결을 종료하거나 장애가 발생하더라도 나머지 피어 간 통신이 중단 없이 유지되어 단일 장애점(SPOF) 문제를 구조적으로 해소하였습니다. 또한 중앙 데이터센터에 대한 의존도를 제거함으로써 로컬 환경에서도 독립적으로 운용 가능한 유연한 통신 인프라를 구축하였습니다.</p>
+                        
+                        <p><strong>② 블록체인 기반 메시지 무결성 보장</strong><br>
+                        모든 대화 메시지는 단순 텍스트가 아닌, 인덱스·타임스탬프·데이터·이전 블록의 해시값으로 구성된 Block 객체로 생성됩니다. SHA-256 해시 함수를 통해 각 블록을 이전 블록과 수학적으로 연결함으로써 불변의 체인 구조를 형성합니다. 과거 메시지를 1바이트라도 수정할 경우 해당 블록의 해시값이 즉각 변경되어 이후 체인 전체가 무효화되므로, 중앙 서버의 보증 없이도 데이터 위·변조를 감지할 수 있습니다.</p>
+                        
+                        <h3>2. 기술적 의의</h3>
+                        <p>본 프로젝트는 가용성·비용 효율·정보 주권이라는 세 가지 과제를 단일 아키텍처로 해결하는 데 초점을 맞췄습니다. P2P 구조로 인프라 비용과 중앙화 리스크를 제거하고, 블록체인 알고리즘으로 신뢰 기관 없는 무결성 검증을 실현하여 완전한 탈중앙화 메신저 환경을 구현하였습니다.</p>
+                        
+                        <div class="grid-gallery" style="margin-top: 20px;">
+                            <img src="chain1.png" alt="블록체인 메신저 프로젝트 자료 1">
+                            <img src="chain2.png" alt="chain2.png">
+                        </div>
+                        <div class="caption" style="margin-top: 10px;">▲ P2P 네트워크 통신 및 블록체인 기반 무결성 검증 구현 화면</div>
+                    </div>
+                </details>
+            </article>
 
-                    <h3>2. 핵심 기술 구현</h3>
-                    <ul>
-                        <li><strong>Requests & BeautifulSoup:</strong> 구조화된 웹 데이터를 타겟팅하여 필요한 정보만 추출했습니다.</li>
-                        <li><strong>Data Cleaning:</strong> 문자열 정제 작업을 통해 가독성 높은 브리핑 포맷을 완성했습니다.</li>
-                    </ul>
-
-                    <h3>3. 성과 및 배운 점</h3>
-                    <p>웹의 구조적 데이터를 파이썬으로 제어하는 기초를 익혔으며, 사용자 경험을 고려한 서비스 설계의 중요성을 배웠습니다.</p>
-                    <img src="weather.png" alt="날씨 비서 실행 화면" class="evidence-img" style="margin-top: 20px;">
-                    <div class="caption">▲ 파이썬으로 직접 구현한 날씨 정보 추출 및 출력 결과</div>
+            <article class="project-item">
+                <div class="project-header">
+                    <div class="project-title">03. DealChecker: AI 기반 계약서 분석 웹 (ACT 해커톤)</div>
+                    <div class="tags">
+                        <span class="tag">AI / NLP</span>
+                        <span class="tag">Fine-Tuning</span>
+                        <span class="tag">Flask</span>
+                    </div>
                 </div>
-            </details>
-        </article>
+                <p class="project-summary">
+                    청년들의 근로계약서 피해 예방을 위해, 사용자가 쉽게 불공정 조항을 인식하고 점검할 수 있도록 AI를 파인튜닝하여 시각화해 주는 법률 지원 웹 서비스입니다.
+                </p>
+                <details>
+                    <summary>개발 과정 및 상세 내용 보기 (Click)</summary>
+                    <div class="detail-content">
+                        <h3>1. 개발 동기 및 목적</h3>
+                        <p><strong>진행 개요:</strong> ACT 해커톤 출품작 (2025.07.31 ~ 08.02, 대전대신고등학교)</p>
+                        <p>대전 지역 청년들이 근로계약서 미작성이나 불공정 조항으로 겪는 피해를 예방하기 위해 기획했습니다. 정보 불균형과 법률 서비스 접근성 문제를 해결하고자, 누구나 활용 가능한 사회 문제 해결형 웹사이트를 개발하여 지역 사회 청소년이 참여하는 IT 공헌 모델을 제시하고자 했습니다.</p>
+                        
+                        <h3>2. 적용 기술 및 이론적 배경</h3>
+                        <ul>
+                            <li><strong>자연어 처리 (NLP):</strong> 사용자가 업로드한 계약서 문장을 단어 단위로 분리하고 의미 파악하여, 불공정 조항 여부를 자동으로 탐지하고 분류하는 데 활용했습니다.</li>
+                            <li><strong>AI 파인튜닝 (Fine-Tuning):</strong> 사전 학습된 범용 인공지능 모델에 실제 근로계약서 사례와 불공정 조항 데이터셋을 추가로 학습시켜, 법률 문서라는 특정 도메인에 최적화된 높은 정확도의 분석 결과를 도출했습니다.</li>
+                        </ul>
+                        
+                        <h3>3. 개발 과정</h3>
+                        <ul>
+                            <li><strong>데이터 전처리:</strong> 실제 계약서 사례를 조사하여 불공정 조항의 패턴 문장을 발췌하고, 모델 학습에 적합한 형태로 데이터셋을 가공했습니다.</li>
+                            <li><strong>모델 학습 및 검증:</strong> 파인튜닝을 통해 정확도와 재현율을 평가·개선하고, 가상의 계약서 입력 및 법률 사료 비교를 통해 신뢰도를 검증했습니다.</li>
+                            <li><strong>웹사이트 구현:</strong> Python(Flask) 기반 백엔드와 HTML/CSS를 활용해, 사용자가 계약서를 업로드하면 자동으로 분석 결과를 시각화해 주는 인터페이스를 구축했습니다.</li>
+                        </ul>
+                        
+                        <h3>4. 주요 성과 및 결과물</h3>
+                        <p>법률 지식이 부족한 사용자도 스스로 계약 내용을 점검할 수 있는 직관적인 플랫폼을 완성했습니다. 특히 플랫폼 내에 <strong>전용 관리 페이지</strong>를 개발하여, 사용자가 과거에 업로드한 계약서와 분석 결과를 누적하여 저장, 비교, 검토할 수 있는 체계적인 이력 관리 기능을 구현했습니다.</p>
+                        
+                        <div class="grid-gallery" style="margin-top: 20px;">
+                            <img src="law1.png" alt="AI 계약서 분석 웹 화면 1">
+                            <img src="law2.png" alt="AI 계약서 분석 웹 화면 2">
+                        </div>
+                        <div class="caption" style="margin-top: 10px;">▲ 계약서 자동 분석 및 이력 관리 인터페이스</div>
+                        
+                        <h3>5. 결론 및 향후 계획</h3>
+                        <p>본 프로젝트를 통해 단순 정보 제공을 넘어 실제 사회 문제 해결에 기여할 수 있다는 생각을 가지게 되었습니다. 향후 더 많은 계약서 데이터를 수집해 분석 정확도를 높이고, 모바일 앱 형태로 확장하여 접근성을 강화할 수 있으면 좋을것 같고, 법률 기관과의 연계를 통해 공신력을 확보한다면 더욱 실질적인 피해 예방 솔루션이 될 것이라 생각합니다.</p>
+                    </div>
+                </details>
+            </article>
 
-    </section>
+            <article class="project-item">
+                <div class="project-header">
+                    <div class="project-title">04. 수학 개념 시각화 도구</div>
+                    <div class="tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Matplotlib</span>
+                        <span class="tag">Visualization</span>
+                    </div>
+                </div>
+                <p class="project-summary">
+                    추상적인 수학 함수식을 즉시 시각화하여 개념의 원리를 직관적으로 이해할 수 있도록 돕는 학습 도구입니다.
+                </p>
+                <details>
+                    <summary>개발 과정 및 상세 내용 보기 (Click)</summary>
+                    <div class="detail-content">
+                        <h3>1. 제작 배경 및 기능</h3>
+                        <p>교과서 속 텍스트로만 보던 '거듭제곱근'의 성질을 눈으로 확인하기 위해 <code>matplotlib</code> 라이브러리를 활용해 제작했습니다.</p>
+                        <div class="grid-gallery" style="margin-top: 20px;">
+                            <img src="graph1.png" alt="그래프 시각화 1">
+                            <img src="graph2.png" alt="그래프 시각화 2">
+                        </div>
+                    </div>
+                </details>
+            </article>
 
-    <footer>
-        <p>© 2026. <strong>Jeon Heejae</strong> (Daejeon Daeshin High School)</p>
-        <p style="margin-top: 10px; font-size: 0.85rem;">Ready to Grow with ACT(KE).</p>
-    </footer>
+            <article class="project-item">
+                <div class="project-header">
+                    <div class="project-title">05. 날씨 브리핑봇</div>
+                    <div class="tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Web Scraping</span>
+                        <span class="tag">BeautifulSoup</span>
+                    </div>
+                </div>
+                <p class="project-summary">
+                    실시간 날씨 정보를 크롤링하여 정제된 메시지로 전달해주는 일상 프로그램입니다.
+                </p>
+                <details>
+                    <summary>개발 과정 및 상세 내용 보기 (Click)</summary>
+                    <div class="detail-content">
+                        <h3>1. 기획 의도</h3>
+                        <p> 나의 일상생활에 도움이 될 수 있는 프로그램을 만들어보자 하는 취지에서 기획하게 되었습니다.</p>
+                        
+                        <h3>2. 핵심 기술 구현</h3>
+                        <ul>
+                            <li><strong>Requests & BeautifulSoup:</strong> 구조화된 웹 데이터를 타겟팅하여 필요한 정보만 추출했습니다.</li>
+                            <li><strong>Data Cleaning:</strong> 문자열 정제 작업을 통해 가독성 높은 브리핑 포맷을 완성했습니다.</li>
+                        </ul>
+                        
+                        <h3>3. 성과 및 배운 점</h3>
+                        <p>웹의 구조적 데이터를 파이썬으로 제어하는 기초를 익혔으며, 사용자 경험을 고려한 서비스 설계의 중요성을 배웠습니다.</p>
+                        <img src="weather.png" alt="날씨 비서 실행 화면" class="evidence-img" style="margin-top: 20px;">
+                        <div class="caption">▲ 파이썬으로 직접 구현한 날씨 정보 추출 및 출력 결과</div>
+                    </div>
+                </details>
+            </article>
+        </section>
 
-</div>
+        <footer>
+            <p>© 2026. <strong>Jeon Heejae</strong> (Daejeon Daeshin High School)</p>
+            <p style="margin-top: 10px; font-size: 0.85rem;">Ready to Grow with ACT(KE).</p>
+        </footer>
+    </div>
 
 </body>
 </html>
