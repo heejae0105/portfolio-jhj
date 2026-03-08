@@ -271,9 +271,9 @@
             </details>
         </article>
 
-        <article class="project-item">
+<article class="project-item">
             <div class="project-header">
-                <div class="project-title">02. P2P 탈중앙화 블록체인 메신저</div>
+                <div class="project-title">02. 익명 오픈채팅 — 탈중앙화 P2P 블록체인 메신저</div>
                 <div class="tags">
                     <span class="tag">Python</span>
                     <span class="tag">Socket</span>
@@ -281,18 +281,26 @@
                 </div>
             </div>
             <p class="project-summary">
-                중앙 서버에 의존하지 않고 클라이언트 간 직접 통신하며 데이터 위변조를 차단하는 메신저를 네트워크 밑바닥부터 직접 구현했습니다.
+                중앙 서버에 대한 의존 없이 개인 간 직접 통신과 데이터 무결성을 동시에 보장하는 익명 오픈채팅 플랫폼입니다. Python Socket 기반의 P2P 네트워크 위에 블록체인 구조를 결합하여, 제3자의 개입 없이도 신뢰 가능한 통신 환경을 구현하였습니다.
             </p>
             <details>
                 <summary>개발 과정 및 상세 내용 보기 (Click)</summary>
                 <div class="detail-content">
-                    <h3>1. 탐구 배경</h3>
-                    <p>대부분의 메신저는 중앙 서버(SPOF)가 다운되면 모든 소통이 마비됩니다. 완성된 통신 API를 쓰기보다, 네트워크의 기본인 TCP/IP 통신의 원리를 깊이 이해하고자 직접 소켓 프로그래밍에 도전했습니다.</p>
-                    <h3>2. 핵심 기술 구현</h3>
-                    <ul>
-                        <li><strong>Socket Programming 기반 P2P:</strong> 서버를 거치지 않고 직접 패킷을 주고받는 탈중앙화 통신 환경을 구축했습니다.</li>
-                        <li><strong>블록체인 해시 무결성 검증:</strong> 이전 메시지의 해시(Hash)값을 다음 메시지에 연결하여 데이터 위변조를 즉각 감지하도록 설계했습니다.</li>
-                    </ul>
+                    <h3>1. 핵심 구현 사항</h3>
+                    <p><strong>① 탈중앙화 P2P 네트워크</strong><br>
+                    Python의 socket 라이브러리를 활용하여 각 클라이언트가 동시에 서버 역할을 수행하는 하이브리드 노드 구조를 설계하였습니다. 특정 노드가 연결을 종료하거나 장애가 발생하더라도 나머지 피어 간 통신이 중단 없이 유지되어 단일 장애점(SPOF) 문제를 구조적으로 해소하였습니다. 또한 중앙 데이터센터에 대한 의존도를 제거함으로써 로컬 환경에서도 독립적으로 운용 가능한 유연한 통신 인프라를 구축하였습니다.</p>
+
+                    <p><strong>② 블록체인 기반 메시지 무결성 보장</strong><br>
+                    모든 대화 메시지는 단순 텍스트가 아닌, 인덱스·타임스탬프·데이터·이전 블록의 해시값으로 구성된 Block 객체로 생성됩니다. SHA-256 해시 함수를 통해 각 블록을 이전 블록과 수학적으로 연결함으로써 불변의 체인 구조를 형성합니다. 과거 메시지를 1바이트라도 수정할 경우 해당 블록의 해시값이 즉각 변경되어 이후 체인 전체가 무효화되므로, 중앙 서버의 보증 없이도 데이터 위·변조를 감지할 수 있습니다.</p>
+
+                    <h3>2. 기술적 의의</h3>
+                    <p>본 프로젝트는 가용성·비용 효율·정보 주권이라는 세 가지 과제를 단일 아키텍처로 해결하는 데 초점을 맞췄습니다. P2P 구조로 인프라 비용과 중앙화 리스크를 제거하고, 블록체인 알고리즘으로 신뢰 기관 없는 무결성 검증을 실현하여 완전한 탈중앙화 메신저 환경을 구현하였습니다.</p>
+                    
+                    <div class="grid-gallery" style="margin-top: 20px;">
+                        <img src="chain1.png" alt="블록체인 메신저 프로젝트 자료 1">
+                        <img src="chain2.png" alt="chain2.png">
+                    </div>
+                    <div class="caption" style="margin-top: 10px;">▲ P2P 네트워크 통신 및 블록체인 기반 무결성 검증 구현 화면</div>
                 </div>
             </details>
         </article>
