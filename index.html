@@ -23,8 +23,17 @@
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
+        html {
+            /* 목차 클릭 시 부드럽게 스크롤되도록 설정 */
+            scroll-behavior: smooth;
+        }
+
         body {
             background-color: var(--bg-color);
+            /* 은은한 도트 무늬 배경 추가 (개발자 감성) */
+            background-image: radial-gradient(#d5d5d5 1px, transparent 1px);
+            background-size: 24px 24px;
+            
             color: var(--text-main);
             font-family: 'Pretendard', sans-serif;
             line-height: 1.75;
@@ -34,10 +43,52 @@
         a { text-decoration: none; color: inherit; transition: 0.2s; }
         a:hover { color: var(--accent); }
 
+        /* 중앙 컨텐츠 영역 설정 */
         .wrapper {
             max-width: 760px;
             margin: 0 auto;
-            padding: 70px 24px;
+            padding: 70px 40px;
+            /* 도트 배경 위에서 컨텐츠가 돋보이도록 반투명 흰색 배경과 은은한 그림자 추가 */
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 0 50px rgba(0,0,0,0.03);
+            min-height: 100vh;
+        }
+
+        /* --- 사이드바 (플로팅 목차) --- */
+        .sidebar {
+            position: fixed;
+            top: 150px;
+            /* 메인 컨텐츠(.wrapper)의 왼쪽 여백 중앙쯤에 위치하도록 계산 */
+            left: calc(50% - 380px - 150px);
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        
+        .sidebar a {
+            font-family: 'Fira Code', 'Pretendard', sans-serif;
+            font-size: 0.95rem;
+            color: #888;
+            font-weight: 600;
+            padding-left: 12px;
+            border-left: 2px solid transparent;
+            transition: all 0.2s ease;
+        }
+
+        .sidebar a:hover {
+            color: var(--accent);
+            border-left: 2px solid var(--accent);
+            transform: translateX(3px);
+        }
+
+        /* 화면이 작아지면 사이드바 숨김 처리 */
+        @media (max-width: 1200px) {
+            .sidebar {
+                display: none;
+            }
+            .wrapper {
+                box-shadow: none;
+            }
         }
 
         /* --- 헤더 --- */
@@ -80,6 +131,7 @@
             font-family: 'Fira Code', monospace; font-weight: 700; color: var(--accent);
             margin-bottom: 40px; display: block; border-left: 5px solid var(--accent);
             padding-left: 15px; font-size: 1.2rem; margin-top: 100px;
+            scroll-margin-top: 50px; /* 목차 클릭 이동 시 위쪽 여백 확보 */
         }
 
         /* --- Growth Log --- */
@@ -158,6 +210,12 @@
 </head>
 <body>
 
+<aside class="sidebar">
+    <a href="#section-intro">> Intro</a>
+    <a href="#section-skills">> 언어 공부 기록</a>
+    <a href="#section-projects">> 프로젝트 (Passion)</a>
+</aside>
+
 <div class="wrapper">
     
     <header>
@@ -169,7 +227,7 @@
         </div>
     </header>
 
-    <section class="intro">
+    <section id="section-intro" class="intro">
         <h1>
             <span class="club-name">ACT(KE)</span>와 꼭 함께<br>
             성장해나가고 싶은<br>
@@ -194,7 +252,7 @@
         </p>
     </section>
 
-    <section>
+    <section id="section-skills">
         <span class="section-label">> 언어 공부 기록 </span>
 
         <div class="skill-box">
@@ -230,7 +288,7 @@
         </div>
     </section>
 
-    <section>
+    <section id="section-projects">
         <span class="section-label">> console.log(My_Passion)</span>
 
         <article class="project-item">
@@ -271,7 +329,7 @@
             </details>
         </article>
 
-<article class="project-item">
+        <article class="project-item">
             <div class="project-header">
                 <div class="project-title">02. 익명 오픈채팅 — 탈중앙화 P2P 블록체인 메신저</div>
                 <div class="tags">
@@ -394,6 +452,7 @@
                 <div class="detail-content">
                     <h3>1. 기획 의도</h3>
                     <p> 나의 일상생활에 도움이 될 수 있는 프로그램을 만들어보자 하는 취지에서 기획하게 되었습니다.</p>
+
                     <h3>2. 핵심 기술 구현</h3>
                     <ul>
                         <li><strong>Requests & BeautifulSoup:</strong> 구조화된 웹 데이터를 타겟팅하여 필요한 정보만 추출했습니다.</li>
